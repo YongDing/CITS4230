@@ -1,0 +1,2 @@
+module PicbookHelper
+end

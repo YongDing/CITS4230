@@ -1,4 +1,6 @@
 Picbook::Application.routes.draw do
+  get "picbook/index"
+
   resources :users
 
   # The priority is based upon order of creation:
