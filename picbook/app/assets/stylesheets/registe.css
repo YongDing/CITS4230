@@ -1,0 +1,88 @@
+#bd {
+	background-color: #F2F2F2;
+	margin: 0;
+	padding: 0;
+	}
+	#container{
+	background-color: #FFFFFF;
+    border-left: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+    margin: 0 auto;
+    text-align: left;
+    width:60%;
+  
+	}
+.fieldsCollection {
+    margin: 2.3em 1.5em;
+    position: relative;
+}
+.dotline {
+    border-top: 1px solid #D6D6D6;
+    height: 1px;
+    margin-bottom: 10px;
+    margin-top: 0.5em;
+    width: 100%;
+}
+.fieldsCollection h2 {
+    color: #662986;
+    font-size: 108%;
+    font-weight: bold;
+}
+.row {
+    margin-bottom: 0.25em;
+    position: relative;
+}
+.label {
+    color: #505050;
+    font-size: 100%;
+    padding-right: 4px;
+}
+.row label {
+    display: inline-block;
+    text-align: right;
+    width: 10em;
+}
+.row div {
+    display: inline-block;
+}
+#firstname, #secondname {
+    width: 10.5em;
+}
+input.fieldValInit {
+    color: #B2B2B2;
+}
+.dateInput {
+    width: 4.88em;
+}
+#mm {
+    width: 11em;
+}
+#picbookid{
+	width:18.6em;
+	color: #B2B2B2;
+}
+#password, #passwordconfirm {
+    width: 18.6em;
+}
+#IAgreeBtn {
+    background: url("img/reg_gradients.png") repeat scroll 0 0 transparent;
+    border: 1px solid #F2A322;
+    font-size: 14px;
+    font-weight: bold;
+    height: 2.54em;
+    width: 8em;
+    margin-top: 1em;
+    border-radius:5px 5px 5px 5px;
+}
+#IAgreeFld{
+	
+	width: 10em;
+    margin:0 auto;
+}
+#fullnameFldMsg,#confPasswordFldMsg,#passwordFldMsg,#yahooIdFldMsg{
+    color: #B1B1B1;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 10px;
+}
+

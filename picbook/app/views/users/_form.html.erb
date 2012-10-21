@@ -11,31 +11,114 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstName %><br />
-    <%= f.text_field :firstName %>
+<div id="container">
+
+		<div id="hd">
+			
+			<div id="yUnivHead" class="">
+				<div id="yuhead-hd" class="yuhead-clearfix">
+					<div id="yuhead-com-links-cont">
+						<ul id="yuhead-com-links" class="yucs-toolbar" >
+							<li id="yuhead-com-home"><a  class="sp yuhead-ico-home" target="_top" 
+							href="http://localhost/Picbook/index.html">Picbook</a></li>
+							<li class="yuhead-me"><a target="_top" 
+							rel="nofollow" href="/" >
+							Help
+							</a><li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+<form id="regFormBody" method="post"  name="regFormBody">
+			<fieldset id="personalFieldsCollection" class="fieldsCollection">
+			
+				<div class="dotline"></div>
+				<h2> Personal Info</h2>
+				
+				<div id="fullnameFld" class="row">
+		          	<label class="label">Username</label>
+		          	<div id="name" class="collection">
+		               <%= f.text_field :firstName %>
+					   <%= f.text_field :lastName %>
+		           </div>
+		           
+		          </div>
+		          
+		          <div id="genderFld" class="row ">
+			        <label class="label">Gender</label>
+			          <div id="gendercollection" class="collection">
+			               <%= f.select(:gender,'<option>Female</option><option>Male</option>'.html_safe)%>
+			          </div>
+			      </div>
+			      
+			      <div id="dobFld" class="row ">
+			          <label class="label">Birthday</label> 
+			          
+			          <div title="Birthday" id="birthdategroup" class="collection">
+				          <%= f.date_select :birthday,:start_year => 1950 %>
+                     </div>
+			      </div>
+			</fieldset>
+		
+		
+		
+		
+			<fieldset class="fieldsCollection">
+				<div class="dotline"></div>
+				<h2> Username and Password</h2>
+			
+				<div id="yahooIdFld" class="row  ">
+			          <label class="label">Email</label> 
+			          <div class="collection">
+			               
+			            <%= f.text_field :email %>
+			           </div>
+			           <div class="msgContainer">
+			               <div class="icon"></div>
+			               <p role="alert" id="yahooIdFldMsg">valid E-mail please</p>
+			           </div>
+                </div>
+                
+                <div id="passwordFld" class="row">
+			          <!---->
+			          <label class="label">Password</label> 
+			          <div class="collection">
+			              <%= f.password_field :password %>
+			               
+			          </div>
+			          
+			           <div class="msgContainer">
+			               <div class="icon"></div>
+			               <p role="alert" id="passwordFldMsg">	
+
+At least 5 characters: letters, numbers and '_'
+			               </p>
+			           </div>
+			          
+			      </div>
+			      
+			      <div id="confPasswordFld" class="row ">
+			          <label class="label">Confirm Password</label> 
+			          <div class="collection">
+			               <%= f.password_field :password_confirmation %>
+			          </div>
+			           <div class="msgContainer">
+			               <div class="icon"></div>
+			               <p role="alert" id="confPasswordFldMsg">Confirm password</p>
+			           </div>
+			       </div>
+			       
+			         <div class="actions">
+    <%= f.submit %> 
   </div>
-  <div class="field">
-    <%= f.label :lastName %><br />
-    <%= f.text_field :lastName %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.text_field :birthday %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= link_to 'Back', users_path %>
+			</fieldset>
+		</form>
+
+</div>
+
+
 <% end %>
