@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
     attr_accessible :password_confirmation
     attr_accessor :password
     
+    has_many :pics
     validates :birthday, :email, :firstName,:lastName, :gender,:password,
     :presence => true
     validates :email, :uniqueness => true

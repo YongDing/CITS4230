@@ -1,4 +1,6 @@
 Picbook::Application.routes.draw do
+  resources :pics
+
   get "picbook/index"
 
   resources :users

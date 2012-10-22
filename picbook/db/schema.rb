@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018110906) do
+ActiveRecord::Schema.define(:version => 20121022055403) do
+
+  create_table "pics", :force => true do |t|
+    t.string   "title"
+    t.binary   "image"
+    t.boolean  "prop"
+    t.integer  "account_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pics", ["account_id"], :name => "index_pics_on_account_id"
 
   create_table "users", :force => true do |t|
     t.string   "firstName"
