@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
     
     
     
-    def authenticate?(submitted_password)
-		if :password == submitted_password
-            true
+    def User.authenticate?(submitted_password)
+		if("123" == submitted_password)
+            return true
         else
-            false
+            return false
         end
     end
     
