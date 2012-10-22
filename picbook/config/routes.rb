@@ -4,6 +4,8 @@ Picbook::Application.routes.draw do
   get "picbook/index"
 
   resources :users
+  
+ match "users/:id/signin" => "users#signin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

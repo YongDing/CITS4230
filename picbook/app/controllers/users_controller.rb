@@ -68,6 +68,10 @@ class UsersController < ApplicationController
       end
     end
   end
+    
+ def signin
+     render "signin"
+ end
 
   # DELETE /users/1
   # DELETE /users/1.json
