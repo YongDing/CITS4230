@@ -1,2 +1,41 @@
-<h1>Picbook#index</h1>
-<p>Find me in app/views/picbook/index.html.erb</p>
+
+<%= javascript_include_tag 'jquery.min' %>
+<%= javascript_include_tag 'jquery.mobile.customized.min' %>
+<%= javascript_include_tag 'jquery.easing.1.3' %>
+<%= javascript_include_tag 'camera.min' %>
+    <script>
+   
+	jQuery(function(){
+			
+			jQuery('#camera_wrap_1').camera({
+				height: '400px',
+				thumbnails: false,
+			});
+
+		});
+		
+		
+	</script>
+	
+<div id="content">
+				<div class="fluid_container">
+			        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+			            <div data-thumb="<%= asset_path 'slides/thumbs/bg1.jpg' %>" data-src="<%=asset_path 'slides/bg1.jpg' %>">
+			            </div>
+			            <div data-thumb="<%= asset_path 'slides/thumbs/bg5.jpeg' %>" data-src="<%=asset_path 'slides/bg5.jpeg'%>">
+			            </div>
+			            <div data-thumb="<%= asset_path 'slides/thumbs/bg3.jpeg' %>" data-src="<%=asset_path 'slides/bg3.jpeg'%>">
+			            </div>
+			            
+			            <div data-thumb="<%= asset_path 'slides/thumbs/bg4.jpeg' %>" data-src="<%=asset_path 'slides/bg4.jpeg'%>">
+			            </div>
+			        </div><!-- #camera_wrap_1 -->
+			 </div>
+			 <div class="promobox">
+						<h1>Share the life <br> with the world</h1>
+							<div class="cta-butt">
+									<h3><a href="http://localhost/Picbook/registe.html">Sign up now</a></h3>
+						</div>
+			</div>	
+	</div>
+
