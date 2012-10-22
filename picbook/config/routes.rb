@@ -1,4 +1,10 @@
 Picbook::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :pics
 
   get "picbook/index"
@@ -6,7 +12,13 @@ Picbook::Application.routes.draw do
   resources :users
   
  match "users/:id/signin" => "users#signin"
-
+ 
+    controller :sessions do
+        get 'login' => :new
+        post 'login' => :create
+        delete 'logout' => :destroy
+        post 'logout' => :destroy
+    end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
