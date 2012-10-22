@@ -1,6 +1,6 @@
 
 class User < ActiveRecord::Base
-    attr_accessible :birthday, :email, :firstName, :gender, :lastName, :password
+    attr_accessible :birthday, :email, :firstName, :gender, :lastName, :password, :profile
     validates_confirmation_of :password
     attr_accessible :password_confirmation
     attr_accessor :password
