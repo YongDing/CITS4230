@@ -4,14 +4,12 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.where("email = ?", params[:email])
-        if user and user.authenticate?(params[:password])
-            session[:user_id] = user.id     
-            redirect_to users_path(session[:user_id])
-        else
-            redirect_to login_url, :alert=> "Password/User name incorrect"
+        if user = User.authenticate(params[:email], params[:password])
+            session[:user_id] = user.id
+            redirect_to :controller => 'users', :action => 'show', :id => user.id
+            else
+            redirect_to login_url, :alert => "Invalid user/password combination"
         end
-        
     end
     
     def destroy
