@@ -32,7 +32,7 @@ a {
 	color:black;
 }
 #header #shadow {
-		background: url("../img/header-shadow.png") no-repeat center top;
+		background: url("images/img/header-shadow.png") no-repeat center top;
 		border-top: 1px #EEE solid;
 		clear: both;
 		opacity: 0;
@@ -76,7 +76,7 @@ clear:both;
 }
 
 #footer {
-    background: url("../img/bg-dark.gif") repeat scroll 0 0 transparent;
+    background: url("img/bg-dark.gif") repeat scroll 0 0 transparent;
     color: #FFFFFF;
     font-size: 10px;
     height: 30px;
@@ -268,5 +268,9 @@ background-clip: padding-box;
 }
 .middle a {
 	font-weight:bold;
+}
+
+#yieldcontent{
+	margin-top: 90px;
 }
 

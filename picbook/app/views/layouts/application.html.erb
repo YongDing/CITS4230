@@ -7,8 +7,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="header">
+			<div id="header_block">
+				<h1 id="logo">
+				</h1>
+				<div id="btn-block">
+					<a class="btn-blue" href="http://localhost/Picbook/index.html">Home</a>
+					<a class="btn-blue" href="http://localhost/Picbook/profile.html">Profile</a>
+					<a class="btn-blue" href="http://localhost/Picbook/signin.html" id="loginBtn">Sign In</a>
+					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Ref</a>
+				</div>
+				
+				
+			</div>
+			<div id="shadow" style="opacity: 1;">&nbsp;</div>		
+	</div>
+	
+	<div id="yieldcontent">
+	<%= yield %>
+	</div>
+	
+	<div id="footer">
+		<span class="copy">&copy;2012 Picbook Team All rights reserved.</span>
+		
+		<div id="footer-list">
+		<ul>
+			<li><a href="">Terms of Service</a></li>
+			<li><a href="">Privacy Policy</a></li>
+			<li><a href="">Support</a></li>
+			<li><a href="">Contact</a></li>
+			<li>&nbsp;</li>
+			<li><a href="">Follow on Facebook</a></li>
+		</ul>
+		</div>
+		</div>
+	
 
-<%= yield %>
+
 
 </body>
 </html>
