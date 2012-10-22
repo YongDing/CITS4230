@@ -51,7 +51,7 @@
 		
 			<fieldset class="fieldsCollection">
 				<div class="dotline"></div>
-				<h2> Username and Password</h2>
+				<h2> Email, Password and Picture</h2>
 			
 				<div id="yahooIdFld" class="row  ">
 			          <label class="label">Email</label> 
@@ -92,6 +92,10 @@ At least 5 characters: letters, numbers and '_'
 			               <div class="icon"></div>
 			               <p role="alert" id="confPasswordFldMsg">Confirm password</p>
 			           </div>
+			          <label class="label">Profile</label> 
+			          <div class="collection">
+			               <%= f.file_field :profile %>
+			          </div>
 			       </div>
 			       
 			         <div class="actions">
