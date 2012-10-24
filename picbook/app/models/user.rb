@@ -7,9 +7,7 @@ class User < ActiveRecord::Base
     
     
     attr_accessible :birthday, :email, :firstName, :gender, :lastName, :password, :avatar
-    has_attached_file :avatar,     :styles => {
-    :thumb=> "100x100#",
-    :small  => "150x150>" }
+    has_attached_file :avatar
     
     
     validates_confirmation_of :password

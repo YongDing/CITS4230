@@ -1,4 +1,4 @@
 class Pic < ActiveRecord::Base
-  belongs_to :account
-  attr_accessible :image, :prop, :title
+  belongs_to :user
+    attr_accessible :image, :prop, :title, :user_id
 end
