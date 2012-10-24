@@ -4,10 +4,12 @@ class User < ActiveRecord::Base
     
     has_many :pics
     
-    has_attached_file :profile, :dependent => :destroy
     
-    attr_accessible :birthday, :email, :firstName, :gender, :lastName, :password, :profile
     
+    attr_accessible :birthday, :email, :firstName, :gender, :lastName, :password, :avatar
+    has_attached_file :avatar,     :styles => {
+    :thumb=> "100x100#",
+    :small  => "150x150>" }
     
     
     validates_confirmation_of :password

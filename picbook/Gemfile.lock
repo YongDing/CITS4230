@@ -89,6 +89,7 @@ GEM
     rbx-require-relative (0.0.9)
     rdoc (3.12)
       json (~> 1.4)
+    rmagick (2.13.1)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -123,6 +124,7 @@ DEPENDENCIES
   json
   paperclip (~> 2.7)
   rails (= 3.2.8)
+  rmagick
   ruby-debug
   sass-rails (~> 3.2.3)
   sqlite3
