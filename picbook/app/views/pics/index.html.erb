@@ -34,10 +34,12 @@
 		
 <% @pics.each do |pic| %>
 
-<div style="float:left">
+<div class="gallery">
 <%= image_tag (pic.photo) %>
 <p/>
+<div class="title">
 <%= pic.title %>
+</div>
 </div>
 <% end %>
 

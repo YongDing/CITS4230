@@ -4,7 +4,7 @@ class PicsController < ApplicationController
   def index
       
     @user = User.find(session[:user_id])
-    @pics = Pic.all
+    @pics = Pic.where("user_id=?",session[:user_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,7 +48,7 @@ class PicsController < ApplicationController
 
     respond_to do |format|
       if @pic.save
-        format.html { redirect_to @pic, :notice => 'Pic was successfully created.' }
+          format.html { redirect_to pics_url, :notice => 'Pic was successfully created.' }
         format.json { render :json => @pic, :status => :created, :location => @pic }
       else
         format.html { render :action => "new" }
