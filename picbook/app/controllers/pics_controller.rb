@@ -2,6 +2,8 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
+      
+    @user = User.find(session[:user_id])
     @pics = Pic.all
 
     respond_to do |format|
@@ -41,6 +43,8 @@ class PicsController < ApplicationController
   # POST /pics.json
   def create
     @pic = Pic.new(params[:pic])
+
+    @pic.user_id = session[:user_id]
 
     respond_to do |format|
       if @pic.save

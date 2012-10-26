@@ -31,7 +31,7 @@
 					<a class="btn-blue" href="http://localhost:3000">Home</a>
 					<a class="btn-blue" href="http://localhost:3000/users/<%=session[:user_id]%>">Profile</a>
 					<a class="btn-blue" href="http://localhost:3000/sessions/destroy">Log out</a>
-					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Gallery</a>
+					<a class="btn-blue" href="http://localhost:3000/pics/<%=session[:user_id]%>">Gallery</a>
 					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Ref</a>
 				</div>
 				<% end%>

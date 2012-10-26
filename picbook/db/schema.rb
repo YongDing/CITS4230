@@ -10,16 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024112753) do
+ActiveRecord::Schema.define(:version => 20121025101106) do
 
   create_table "pics", :force => true do |t|
     t.string   "title"
     t.binary   "image"
     t.boolean  "prop"
     t.integer  "account_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "pics", ["account_id"], :name => "index_pics_on_account_id"

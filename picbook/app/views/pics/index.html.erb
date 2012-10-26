@@ -1,29 +1,55 @@
-<h1>Listing pics</h1>
+<p id="notice">
+	<%= notice %>
+</p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Image</th>
-    <th>Prop</th>
-    <th>Account</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="user-strip"></div>
+<div id="content">
+	<div class="left-side">
+		<div id="user-stats">
+			<div class="user-info clearfix">
+				<div class="avatar">
+					<%= image_tag (@user.avatar.url) %>
+				</div>
+				<div class="info">
+					<div class="link">
+						Hello, <%= @user.firstName=%>
+					</div>
+				</div>
 
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				More Details!
+
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="right-side-profile">
+		<h3><%= " Gallery:" %></h3>
+		
 <% @pics.each do |pic| %>
-  <tr>
-    <td><%= pic.title %></td>
-    <td><%= pic.image %></td>
-    <td><%= pic.prop %></td>
-    <td><%= pic.account %></td>
-    <td><%= link_to 'Show', pic %></td>
-    <td><%= link_to 'Edit', edit_pic_path(pic) %></td>
-    <td><%= link_to 'Destroy', pic, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+
+<div style="float:left">
+<%= image_tag (pic.photo) %>
+<p/>
+<%= pic.title %>
+</div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Pic', new_pic_path %>
+		<div class="clearboth"></div>
+		<div id="results">
+
+			<h3>Recent Post</h3>
+
+
+			<div class="dotline"></div>
+
+		</div>
+	</div>
+</div>

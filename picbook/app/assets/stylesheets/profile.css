@@ -13,6 +13,13 @@
 	
 }
 
+
+#photoelement{
+	margin-top:70px;
+	margin-left:5%;	
+}
+
+
 .result{
 	height:auto;
 	margin:10px 15px;
@@ -91,7 +98,7 @@ a {
     border: 1px solid #C4C4C4;
     border-radius: 8px 8px 8px 8px;
     box-shadow: 1px 1px 5px -1px rgba(0, 0, 0, 0.25) inset;
-    max-height: 58px;
+    max-height: 108px;
     overflow: hidden;
     padding: 0 8px 4px;
 }
@@ -101,7 +108,7 @@ a {
     height: 18px;
     overflow: auto;
     width: 420px;
-    height:51px;
+    height:101px;
     display:inline-block;
     resize:none;
 }
@@ -194,7 +201,7 @@ a {
 #uploadBox{
 	width:85%;
 	float:left;
-	height:20px;
+	height:50px;
 	padding-left:25px;
 	padding-right:5px;
 	padding-top:10px;
@@ -206,7 +213,7 @@ a {
 	height:20px;
 	padding-top:10px;
 }
-#uploadBtn button{
+#uploadBtn input{
 	width:60px;
 	height:60px;
 	border-radius:6px 6px 6px 6px;

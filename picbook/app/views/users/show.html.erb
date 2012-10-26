@@ -1,118 +1,132 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %>
+</p>
 
-<div id="user-strip"> </div>
+<div id="user-strip"></div>
 <div id="content">
-		<div class="left-side">
-			<div id="user-stats">
-				<div class="user-info clearfix">
-					<div class="avatar">
-						<%= image_tag (@user.avatar.url) %>
-					</div>
-					<div class="info">
-						<div class="link">
-							Hello, <%= @user.firstName=%>
-						</div>
-					</div>
-					
-					<br/><br/><br/><br/><br/><br/>
-					More Details!
-					
+	<div class="left-side">
+		<div id="user-stats">
+			<div class="user-info clearfix">
+				<div class="avatar">
+					<%= image_tag (@user.avatar.url) %>
 				</div>
+				<div class="info">
+					<div class="link">
+						Hello, <%= @user.firstName=%>
+					</div>
+				</div>
+
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				More Details!
+
 			</div>
 		</div>
-		
-		<div class="right-side-profile">
-		
+	</div>
+	
+	<%= form_for @pic, :url => { :action =>"create", :controller => 
+"pics"}  do |f| %>
+	<div class="right-side-profile">
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your photo:</h3>
 		<div id="uploadBox">
+
 			<div class="reply">
-			<textarea class="autocomplete-input inactive"></textarea>
+
+				<%= f.text_area :title %>
+
 			</div>
-			
+
 		</div>
+
 		<div id="uploadBtn">
-		<button>Upload</button>
+			 <%= f.submit "Upload"%>
 		</div>
 		<div class="clearboth"></div>
-			<div id="results">
+		<div id="photoelement">
+			<%= label_tag(:photo, "Select a picture you want to upload:  ") %><%= f.file_field :photo%>
+			<p/>
+			<%= label_tag(:prop, "Set private: ") %><%= f.check_box :prop %>
 			
-	<h3>Recent Post</h3>
-	
-		<div id="noah-live-fed" class="result">
-			<div class="image">
-				<a class="" href="/">
-					<img alt="author" src="img/noah.jpeg">
-				</a>
-			</div>
-			<div class="info">
-				<div class="name-date">
-					<span class="user-link">Xiaoyi Lu</span>
-					<span class="pub-date">4 days ago</span>
+		</div>
+	<% end %>
+		<div class="clearboth"></div>
+		<div id="results">
+
+			<h3>Recent Post</h3>
+
+			<div id="noah-live-fed" class="result">
+				<div class="image">
+					<a class="" href="/"> <img alt="author" src="img/noah.jpeg"> </a>
 				</div>
-				<div class="text-source">
-					<div class="text">
-						Ravenel bridge this morning
+				<div class="info">
+					<div class="name-date">
+						<span class="user-link">Xiaoyi Lu</span>
+						<span class="pub-date">4 days ago</span>
 					</div>
-				</div>
-				<!-- 
-				<ul class="controls">
+					<div class="text-source">
+						<div class="text">
+							Ravenel bridge this morning
+						</div>
+					</div>
+					<!--
+					<ul class="controls">
 					<li>
 					<span class="comment">Reply</span></li>
-				
-				</ul>  -->
-				<div class="reply-box">
-					<div class="reply">
-						<textarea class="autocomplete-input inactive"></textarea>
-					</div>
-					<div class="reply-button">
-						<a class="blue-button" href="">Reply</a>
+
+					</ul>  -->
+					<div class="reply-box">
+						<div class="reply">
+							<textarea class="autocomplete-input inactive"></textarea>
+						</div>
+						<div class="reply-button">
+							<a class="blue-button" href="">Reply</a>
+						</div>
 					</div>
 				</div>
+				<div class="clearboth"></div>
 			</div>
-			<div class="clearboth"></div>
-		</div>
-		<div class="dotline"></div>
-		<div id="noah1-live-fed" class="result">
-			<div class="image">
-				<a class="" href="/">
-					<img alt="author" src="img/noah.jpeg">
-				</a>
-			</div>
-			<div class="info">
-				<div class="name-date">
-					<span class="user-link">Xiaoyi Lu</span>
-					<span class="pub-date">4 days ago</span>
+			<div class="dotline"></div>
+			<div id="noah1-live-fed" class="result">
+				<div class="image">
+					<a class="" href="/"> <img alt="author" src="img/noah.jpeg"> </a>
 				</div>
-				<div class="text-source">
-					<div class="text">
-						Ravenel bridge this morning
+				<div class="info">
+					<div class="name-date">
+						<span class="user-link">Xiaoyi Lu</span>
+						<span class="pub-date">4 days ago</span>
 					</div>
-				</div>
-				<div class="images">
-				<a href="http://localhost/Picbook/comment.html"><img src="img/rb.jpg" alt="rb"/></a>
-				</div>
-				<!-- 
-				<ul class="controls">
+					<div class="text-source">
+						<div class="text">
+							Ravenel bridge this morning
+						</div>
+					</div>
+					<div class="images">
+						<a href="http://localhost/Picbook/comment.html"><img src="img/rb.jpg" alt="rb"/></a>
+					</div>
+					<!--
+					<ul class="controls">
 					<li><span class="comment">Reply</span></li>
-				
-				</ul>  -->
-				<div class="reply-box">
-					<div class="reply">
-						<textarea class="autocomplete-input inactive"></textarea>
+
+					</ul>  -->
+					<div class="reply-box">
+						<div class="reply">
+							<textarea class="autocomplete-input inactive"></textarea>
+						</div>
+
+						<div class="reply-button">
+							<a class="blue-button" href="">Reply</a>
+						</div>
+						<div id="empty"></div>
+
 					</div>
-					
-					<div class="reply-button">
-						<a class="blue-button" href="">Reply</a>
-					</div> 
-					<div id="empty"></div>
-					 
-					 
-					 
+					<div class="clearboth"></div>
 				</div>
-			<div class="clearboth"></div>
+
+			</div>
 		</div>
-		
-		
-	</div>
 	</div>
 </div>
-		</div>
