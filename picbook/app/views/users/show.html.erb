@@ -22,7 +22,7 @@
 				<br/>
 				<br/>
 				<br/>
-				More Details!
+
 
 			</div>
 		</div>
@@ -57,76 +57,36 @@
 		<div id="results">
 
 			<h3>Recent Post</h3>
-
-			<div id="noah-live-fed" class="result">
+			<% i=0 %>
+			<% @pics.each do |pic| %>
+			<% i+= 1 %>
+			<div id="noah-live-fed<%= i %>" class="result">
+			<% @friend = User.find(pic.user_id)%>
 				<div class="image">
-					<a class="" href="/"> <img alt="author" src="img/noah.jpeg"> </a>
+					<%= image_tag (@friend.avatar) %>
 				</div>
 				<div class="info">
 					<div class="name-date">
-						<span class="user-link">Xiaoyi Lu</span>
-						<span class="pub-date">4 days ago</span>
+					
+						<span class="user-link">Upload by <%= @friend.firstName+" "+@friend.lastName%></span>
+						<span class="pub-date"><%= pic.attributes_before_type_cast["created_at"] %></span>
 					</div>
 					<div class="text-source">
 						<div class="text">
-							Ravenel bridge this morning
-						</div>
-					</div>
-					<!--
-					<ul class="controls">
-					<li>
-					<span class="comment">Reply</span></li>
-
-					</ul>  -->
-					<div class="reply-box">
-						<div class="reply">
-							<textarea class="autocomplete-input inactive"></textarea>
-						</div>
-						<div class="reply-button">
-							<a class="blue-button" href="">Reply</a>
-						</div>
-					</div>
-				</div>
-				<div class="clearboth"></div>
-			</div>
-			<div class="dotline"></div>
-			<div id="noah1-live-fed" class="result">
-				<div class="image">
-					<a class="" href="/"> <img alt="author" src="img/noah.jpeg"> </a>
-				</div>
-				<div class="info">
-					<div class="name-date">
-						<span class="user-link">Xiaoyi Lu</span>
-						<span class="pub-date">4 days ago</span>
-					</div>
-					<div class="text-source">
-						<div class="text">
-							Ravenel bridge this morning
+							<%= pic.title %>
 						</div>
 					</div>
 					<div class="images">
-						<a href="http://localhost/Picbook/comment.html"><img src="img/rb.jpg" alt="rb"/></a>
+						<a href="http://localhost/Picbook/comment.html"><%= image_tag (pic.photo) %></a>
 					</div>
-					<!--
-					<ul class="controls">
-					<li><span class="comment">Reply</span></li>
 
-					</ul>  -->
-					<div class="reply-box">
-						<div class="reply">
-							<textarea class="autocomplete-input inactive"></textarea>
-						</div>
-
-						<div class="reply-button">
-							<a class="blue-button" href="">Reply</a>
-						</div>
-						<div id="empty"></div>
-
-					</div>
 					<div class="clearboth"></div>
+					<div class="dotline"></div>
 				</div>
-
 			</div>
+			<div class="clearboth"></div>
+			<% end %>
 		</div>
+		
 	</div>
 </div>
