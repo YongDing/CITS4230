@@ -34,6 +34,37 @@
 			 <div class="promobox">
 						<h1>Share the life <br> with the world</h1>
 									<h3><a href="http://localhost:3000/users/new">Register now</a></h3>
-			</div>	
+			</div>
+			
+						<div id="hot_image_container">
+				<h3>Hot Photos</h3>
+				<% @pics.each do |pic| %>
+				<% @friend = User.find(pic.user_id)%>
+				<div class="hot_image">
+				<a href=""><%= image_tag (pic.photo, :class => "thumb") %>
+				</a>
+				<p class="hot_user"><%= image_tag (@friend.avatar) %><a href=""> @<%= @friend.firstName+" "+@friend.lastName%></a></p>
+				</div>
+<% end %>	
+				</div>	
+			
+
+								<div id="latest_image_container">
+				<h3>Latest Photos</h3>
+				<div class="latest_image">
+			      <div class="left">
+			        <img src="img/claudia.jpeg" alt="claudia" />
+			      </div>
+			      <div class="middle">
+			        <p><a href="">claudiajordan</a></p>
+			        <p>Wow this dude is 51 years old!!</p>
+			      </div>
+			      <div class="right">
+			        <a href="">
+			          <img src="img/sharedimage.jpg" alt="sharedimage"/>
+			        </a>
+			      </div>
+			    </div>
+								</div>
 	</div>
 
