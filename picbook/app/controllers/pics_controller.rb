@@ -57,14 +57,16 @@ class PicsController < ApplicationController
     @pic = Pic.new(params[:pic])
 
     @pic.user_id = session[:user_id]
-
+    @user = User.find(session[:user_id])
     respond_to do |format|
       if @pic.save
-          format.html { redirect_to pics_url, :notice => 'Pic was successfully created.' }
+          format.html { redirect_to @user, :notice => 'Pic was successfully created.' }
         format.json { render :json => @pic, :status => :created, :location => @pic }
       else
-        format.html { render :action => "new" }
-        format.json { render :json => @pic.errors, :status => :unprocessable_entity }
+          
+          @pics = Pic.limit(3).order("created_at DESC")
+          format.html { render :template => "users/show" }
+          format.json { render :json => @pic.errors, :status => :unprocessable_entity }
       end
     end
   end

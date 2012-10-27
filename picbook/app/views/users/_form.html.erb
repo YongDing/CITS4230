@@ -1,5 +1,13 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+
+
+<div id="container">
+
+
+
+<form id="regFormBody" method="post"  name="regFormBody">
+			<fieldset id="personalFieldsCollection" class="fieldsCollection">
+	  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
@@ -9,15 +17,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
-
-<div id="container">
-
-
-
-<form id="regFormBody" method="post"  name="regFormBody">
-			<fieldset id="personalFieldsCollection" class="fieldsCollection">
-			
+  <% end %>		
 
 				<h2> Personal Info</h2>
 				

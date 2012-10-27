@@ -18,8 +18,11 @@ class User < ActiveRecord::Base
     
     validates :birthday, :email, :firstName,:lastName, :gender,:password,
     :presence => true
+    validates_attachment_presence :avatar;
+    validates_attachment_content_type :avatar, :content_type => ['image/png', 'image/jpg','image/gif','image/jpeg']
     validates :email, :uniqueness => true
     validates_format_of  :email, :message => "has invalid format!", :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+    
     
     
 
