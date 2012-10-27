@@ -3,7 +3,13 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
+    if session[:user_id] != nil
+        @user = User.find(session[:user_id])
+    else
+        @user = User.new
+        @user.firstName = "Guest"
+    end
+      
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @users }

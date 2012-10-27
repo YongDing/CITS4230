@@ -7,9 +7,12 @@
 	<div class="left-side">
 		<div id="user-stats">
 			<div class="user-info clearfix">
+				<% if @user.firstName!='Guest'%>
 				<div class="avatar">
 					<%= image_tag (@user.avatar.url) %>
 				</div>
+				<%end%>
+
 				<div class="info">
 					<div class="link">
 						Hello, <%= @user.firstName=%>
@@ -28,12 +31,16 @@
 
 	<div class="right-side-profile">
 		<h3>Layout: </h3>
-		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerythumbnail">Thumbnail</a>
-		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerysmall">Small</a>
-		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerymedium">Medium</a>
-		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerylarge">Large</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerythumbnail&user_id=<%= session[:gallery_user_id]%>">Thumbnail</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerysmall&user_id=<%= session[:gallery_user_id]%>">Small</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerymedium&user_id=<%= session[:gallery_user_id]%>">Medium</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerylarge&user_id=<%= session[:gallery_user_id]%>">Large</a>
 <p/>	
-<h3>Gallery: </h3>
+<h3>
+<% if @user.firstName=='Guest' %>
+<%= @user.lastName + "'s " %>
+<% end %>
+Gallery: </h3>
 <% @pics.each do |pic| %>
 
 <div class=<%= session[:layout] %>>

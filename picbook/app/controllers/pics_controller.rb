@@ -2,9 +2,18 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-      
-    @user = User.find(session[:user_id])
-    @pics = Pic.where("user_id=?",session[:user_id])
+    if session[:user_id] != nil
+        @user = User.find(session[:user_id])
+        @pics = Pic.where("user_id=?",session[:user_id])
+    else
+        session[:gallery_user_id] = params[:user_id]
+        @galleryUser = User.find(params[:user_id])
+        @user = User.new
+        @user.firstName = "Guest"
+        @user.lastName = @galleryUser.firstName
+        @pics = Pic.where("user_id=?",params[:user_id])
+    end
+   
     
     
     session[:layout] = params["layout"]

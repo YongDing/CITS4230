@@ -1,4 +1,39 @@
-<h1>Listing users</h1>
+<p id="notice">
+	<%= notice %>
+</p>
+
+<div id="user-strip"></div>
+<div id="content">
+	<div class="left-side">
+		<div id="user-stats">
+			<div class="user-info clearfix">
+				<% if @user.firstName!='Guest'%>
+				<div class="avatar">
+					<%= image_tag (@user.avatar.url) %>
+				</div>
+				<%end%>
+				<div class="info">
+					<div class="link">
+						Hello, <%= @user.firstName=%>
+					</div>
+				</div>
+
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+
+
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="right-side-profile">
+		
+		<h1>Listing users</h1>
 
 <table>
   <tr>
@@ -6,11 +41,7 @@
     <th>Lastname</th>
     <th>Gender</th>
     <th>Birthday</th>
-    <th>Email</th>
-    <th>Password</th>
     <th>Profile</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -20,19 +51,16 @@
     <td><%= user.lastName %></td>
     <td><%= user.gender %></td>
     <td><%= user.birthday %></td>
-    <td><%= user.email %></td>
-    <td><%= user.password %></td>
-    <td><%= image_tag (user.avatar.url) %>
-    <%= image_tag user.avatar.url(:thumb) %>
+    <td><%= image_tag (user.avatar, :width => "100px", :height => "100px")  %>
    </td>
     
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td><%= link_to 'Gallery', :controller => "pics", :action => "index", :layout => "gallerysmall", :user_id => user.attributes_before_type_cast["id"] %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+		
+	</div>
+</div>
