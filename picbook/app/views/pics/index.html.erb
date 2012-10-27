@@ -37,9 +37,8 @@
 		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerylarge&user_id=<%= session[:gallery_user_id]%>">Large</a>
 <p/>	
 <h3>
-<% if @user.firstName=='Guest' %>
-<%= @user.lastName + "'s " %>
-<% end %>
+
+<%= @galleryUser.firstName + "'s " %>
 Gallery: </h3>
 <% @pics.each do |pic| %>
 

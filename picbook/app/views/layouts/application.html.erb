@@ -33,7 +33,7 @@
 					<a class="btn-blue" href="http://localhost:3000/users">Users</a>
 					<a class="btn-blue" href="http://localhost:3000/users/<%=session[:user_id]%>">Profile</a>
 					<a class="btn-blue" href="http://localhost:3000/sessions/destroy">Log out</a>
-					<a class="btn-blue" href="http://localhost:3000/pics/?layout=gallerythumbnail">Gallery</a>
+					<a class="btn-blue" href="http://localhost:3000/pics/?layout=gallerythumbnail&user_id=<%= session[:user_id]%>">Gallery</a>
 					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Ref</a>
 				</div>
 				<% end%>
