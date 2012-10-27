@@ -5,7 +5,10 @@ class PicsController < ApplicationController
       
     @user = User.find(session[:user_id])
     @pics = Pic.where("user_id=?",session[:user_id])
-
+    
+    
+    session[:layout] = params["layout"]
+          
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @pics }

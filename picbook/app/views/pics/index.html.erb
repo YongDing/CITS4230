@@ -27,11 +27,16 @@
 	
 
 	<div class="right-side-profile">
-		<h3><%= " Gallery:" %></h3>
-		
+		<h3>Layout: </h3>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerythumbnail">Thumbnail</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerysmall">Small</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerymedium">Medium</a>
+		<a class="gallerybtn" href="http://localhost:3000/pics/?layout=gallerylarge">Large</a>
+<p/>	
+<h3>Gallery: </h3>
 <% @pics.each do |pic| %>
 
-<div class="gallery">
+<div class=<%= session[:layout] %>>
 <%= image_tag (pic.photo) %>
 <p/>
 <div class="title">

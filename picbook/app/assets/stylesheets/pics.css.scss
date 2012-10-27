@@ -1,7 +1,7 @@
 // Place all the styles related to the Pics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.gallery{
+.gallerythumbnail{
 position:relative;  
 float: left;
 height: 200px;
@@ -12,14 +12,89 @@ margin: 10px;
 text-align: center;
 }
 
-.gallery img{
+.gallerythumbnail img{
 	position:relative;
 	top:20px;
 	width: 100px;
 	height: 100px;
 }
 
-.gallery .title{
+.gallerythumbnail .title{
+	position:absolute;
+	bottom:20px;
+	left: 80px;
+	
+}
+//------------
+.gallerysmall{
+position:relative;  
+float: left;
+height: 300px;
+width: 300px;	
+border: 1px solid black;
+border-radius: 12px;
+margin: 10px;
+text-align: center;
+}
+
+.gallerysmall img{
+	position:relative;
+	top:20px;
+	width: 200px;
+	height: 200px;
+}
+
+.gallerysmall .title{
+	position:absolute;
+	bottom:20px;
+	left: 80px;
+	
+}
+//------------
+.gallerymedium{
+position:relative;  
+float: left;
+height: 400px;
+width: 400px;	
+border: 1px solid black;
+border-radius: 12px;
+margin: 10px;
+text-align: center;
+}
+
+.gallerymedium img{
+	position:relative;
+	top:20px;
+	width: 300px;
+	height: 300px;
+}
+
+.gallerymedium .title{
+	position:absolute;
+	bottom:20px;
+	left: 80px;
+	
+}
+//------------
+.gallerylarge{
+position:relative;  
+float: left;
+height: 500px;
+width: 500px;	
+border: 1px solid black;
+border-radius: 12px;
+margin: 10px;
+text-align: center;
+}
+
+.gallerylarge img{
+	position:relative;
+	top:20px;
+	width: 400px;
+	height: 400px;
+}
+
+.gallerylarge .title{
 	position:absolute;
 	bottom:20px;
 	left: 80px;
