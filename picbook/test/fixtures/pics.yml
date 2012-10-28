@@ -2,12 +2,19 @@
 
 one:
   title: MyString
-  image: 
-  prop: false
-  account: 
+  user_id: 1
+  prop: f
 
 two:
   title: MyString
-  image: 
-  prop: false
-  account: 
+  user_id: 1
+  prop: f
+
+picture:
+  title: test
+  prop: t
+  user_id: 1
+  photo_file_name: 2012-01-25_18.29.35.jpg
+  photo_content_type: image/jpeg
+  photo_file_size: 2766935
+  photo_updated_at: 2012-10-26 12:57:27.394323

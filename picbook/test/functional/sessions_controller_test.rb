@@ -1,19 +1,27 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
+setup do
+    @request.session[:user_id] = "1"
+end
+
+test "should login" do
+    ding = users(:ding)
+    post :create, :email => 'yiling0816@163.com', :password => '22525225'
+    assert_redirected_to :controller => 'users', :action => 'show', :id => user.id
+    assert_equal ding.id, session[:user_id]
+end
+
+test "should fail login" do
+    ding = users(:ding)
+    post :create, :email => ding.email, :password => 'wrong'
+    assert_redirected_to login_url
+end
 
   test "should get destroy" do
     get :destroy
-    assert_response :success
+    assert_redirected_to :controller => 'picbook', :action => 'index'
   end
 
 end

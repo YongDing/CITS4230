@@ -6,7 +6,6 @@ one:
   gender: MyString
   birthday: 
   email: MyString
-  password: MyString
 
 two:
   firstName: MyString
@@ -14,4 +13,11 @@ two:
   gender: MyString
   birthday: 
   email: MyString
-  password: MyString
+
+ding:
+  id: 1
+  email: yiling0816@163.com
+  firstName: yong
+  lastName: ding
+  gender: Male
+  birthday: 1997-02-15
