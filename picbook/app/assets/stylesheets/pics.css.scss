@@ -1,7 +1,7 @@
 // Place all the styles related to the Pics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.gallerythumbnail{
+	.gallerythumbnail{
 position:relative;  
 float: left;
 height: 200px;
@@ -20,9 +20,7 @@ text-align: center;
 }
 
 .gallerythumbnail .title{
-	position:absolute;
-	bottom:20px;
-	left: 80px;
+	margin: 10px auto;
 	
 }
 //------------
@@ -45,9 +43,7 @@ text-align: center;
 }
 
 .gallerysmall .title{
-	position:absolute;
-	bottom:20px;
-	left: 80px;
+	margin: 10px auto;
 	
 }
 //------------
@@ -70,9 +66,7 @@ text-align: center;
 }
 
 .gallerymedium .title{
-	position:absolute;
-	bottom:20px;
-	left: 80px;
+margin: 10px auto;
 	
 }
 //------------
@@ -95,8 +89,6 @@ text-align: center;
 }
 
 .gallerylarge .title{
-	position:absolute;
-	bottom:20px;
-	left: 80px;
+	margin: 10px auto;
 	
 }

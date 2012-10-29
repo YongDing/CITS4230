@@ -26,14 +26,13 @@
 				<br/>
 				<br/>
 				<br/>
-				<input type="button" onclick="getPP()" />
-
+			
 			</div>
 		</div>
 	</div>
 	
 	<%= form_for @pic, :url => { :action =>"create", :controller => 
-"pics", :onclick => "getPP()"}  do |f| %>
+"pics"}  do |f| %>
 	<div class="right-side-profile">
 	
 	<% if @pic.errors.any? %>
@@ -69,7 +68,7 @@
 		<div id="photoelement">
 			<%= label_tag(:photo, "Select a picture you want to upload:  ") %><%= f.file_field :photo%>
 			<p/>
-			<%= label_tag(:prop, "Set private: ") %><%= f.check_box :prop %>
+			<%= label_tag(:prop, "Set to be private: ") %><%= f.check_box :prop %>
 			<br />
 			<div><%= label_tag("Share your location:") %> <span  onclick="getLocation()" style="color:grey;font-weight:bold;">Share</span></div>
 			<div id="mapholder"></div>
@@ -99,9 +98,8 @@
 						</div>
 					</div>
 					<div class="images">
-						<a href="http://localhost/Picbook/comment.html"><%= image_tag (pic.photo) %></a>
+						<%= image_tag (pic.photo) %>
 					</div>
-
 					<div class="clearboth"></div>
 					<div class="dotline"></div>
 				</div>
@@ -114,12 +112,7 @@
 </div>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type=text/javascript >
-function getPP() {
-	
-	document.getElementById("longi").value = 700;
-	document.getElementById("lati").value= 700;
-	alert ("！！！！");
-}
+
 
 function getLocation()
   {
