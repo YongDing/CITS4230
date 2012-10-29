@@ -47,11 +47,11 @@ Gallery: </h3>
 <%= pic.title %>
 </div>
 <%= image_tag (pic.photo) %>
-<%= hidden_field_tag("longi", pic.longitude, {:id => "longi"})%>
-<%= hidden_field_tag("lati", pic.latitude, {:id => "lati"})%>
+<%= hidden_field_tag("longi", pic.longitude, {:id => "longi"+pic.id.to_s})%>
+<%= hidden_field_tag("lati", pic.latitude, {:id => "lati"+pic.id.to_s})%>
 <br />
 <br />
-<div onclick="showPosition();"> Show Geolocation</div>
+<div onclick="showPosition(<%= pic.id%>);"> Show Geolocation</div>
 </div>
 
 <% end %>
@@ -76,10 +76,10 @@ function getLocation()
   else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
 
-function showPosition()
+function showPosition(pid)
   {
-  lat=document.getElementById("lati").value;
-  lon=document.getElementById("longi").value;
+  lat=document.getElementById("lati"+pid).value;
+  lon=document.getElementById("longi"+pid).value;
    
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
