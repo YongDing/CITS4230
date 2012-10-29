@@ -96,4 +96,27 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+    
+    def mkfd
+        @relationship = Relationship.new
+        @relationship.person_id = session[:user_id]
+        @relationship.friend_id = params[:id]
+    
+
+        respond_to do |format|
+          if @relationship.save
+                  format.html { redirect_to users_url, :notice =>'Relationship was successfully created.' }
+                 format.json { render :json => @relationship, :status => :created, :location => @relationship }
+                   else
+                    format.html { render :action => "index" }
+                      format.json { render :json => @relationship.errors, :status => :unprocessable_entity }
+                 end
+            end
+    end
+    
+    private
+    
+    def isFriend
+        
+    end
 end

@@ -9,6 +9,17 @@ Picbook::Application.routes.draw do
 
   get "picbook/index"
 
+    resources :relationships
+    resources :users do
+        member do
+            post 'mkfd'
+            
+        end
+        
+    end
+  
+  match "users/:id/mkfd" => "users#mkfd"
+  match "users/:id/rmfd" => "users#rmfd"
   resources :users
   
  match "users/:id/signin" => "users#signin"
