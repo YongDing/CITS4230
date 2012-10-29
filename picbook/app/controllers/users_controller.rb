@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @pic = Pic.new
      
     
-    @pics = Pic.limit(3).order("created_at DESC")
+      @pics = Pic.where("user_id = ?", session[:user_id]).limit(3).order("created_at DESC")
 
     
     respond_to do |format|

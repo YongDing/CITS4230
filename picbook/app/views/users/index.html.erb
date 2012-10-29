@@ -20,6 +20,16 @@
 
 				<br/>
 				<br/>
+				
+				<%= if(!session[:user_id].nil?) 
+			           form_tag users_path, :method => 'get' do %>
+					  <p>
+					  	<%= hidden_field_tag(:id, value = @user.id) %>
+					    <%= text_field_tag :search, params[:search] %>
+					    <%= submit_tag "Search", :name=>nil%>
+					  </p>
+					<% end %>
+					<% end %>
 				<br/>
 				<br/>
 				<br/>
