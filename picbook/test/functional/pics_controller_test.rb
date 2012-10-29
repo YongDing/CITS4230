@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PicsControllerTest < ActionController::TestCase
   setup do
-    @pic = pics(:picture)
+    @pic = pics(:one)
     @newpic = Pic.new
     @request.session[:user_id] = "1"
   end
@@ -20,7 +20,7 @@ class PicsControllerTest < ActionController::TestCase
 
   test "should create pic" do
     assert_difference('Pic.count') do
-      post :create, :pic => { :photo => @pic.photo, :prop => @pic.prop, :title => @pic.title }
+      post :create, :pic => {:prop => @pic.prop, :title => @pic.title }
     end
 
     assert_redirected_to pic_path(assigns(:pic))
@@ -36,10 +36,6 @@ class PicsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update pic" do
-    put :update, :id => @pic, :pic => { :photo => @pic.photo, :prop => @pic.prop, :title => @pic.title }
-    assert_redirected_to pic_path(assigns(:pic))
-  end
 
   test "should destroy pic" do
     assert_difference('Pic.count', -1) do

@@ -51,7 +51,7 @@
     <td><%= user.lastName %></td>
     <td><%= user.gender %></td>
     <td><%= user.birthday %></td>
-    <td><%= image_tag (user.avatar, :width => "100px", :height => "100px")  %>
+    <td><%= image_tag user.avatar, :width => "100px", :height => "100px"  %>
    </td>
     
     <td><%= link_to 'Gallery', :controller => "pics", :action => "index", :layout => "gallerysmall", :user_id => user.attributes_before_type_cast["id"] %></td>
