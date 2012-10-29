@@ -17,9 +17,10 @@ Picbook::Application.routes.draw do
         end
         
     end
-  
+
   match "users/:id/mkfd" => "users#mkfd"
   match "users/:id/rmfd" => "users#rmfd"
+    match "picbook/reference" => "picbook#reference"
   resources :users
   
  match "users/:id/signin" => "users#signin"
@@ -29,6 +30,11 @@ Picbook::Application.routes.draw do
         post 'login' => :create
         delete 'logout' => :destroy
         post 'logout' => :destroy
+    end
+    
+    controller :picbook do
+        get 'reference' => :reference
+        post 'reference' => :reference
     end
   # The priority is based upon order of creation:
   # first created -> highest priority.

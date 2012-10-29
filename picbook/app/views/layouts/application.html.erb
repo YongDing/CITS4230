@@ -24,7 +24,8 @@
 					<a class="btn-blue" href="http://localhost:3000">Home</a>
 					<a class="btn-blue" href="http://localhost:3000/users">Users</a>
 					<a class="btn-blue" href="http://localhost:3000/login">Sign In</a>
-					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Ref</a>
+					<a class="btn-blue" href="http://localhost:3000/simplecov/index.html">Coverage</a>
+					<a class="btn-blue" href="http://localhost:3000/picbook/reference">Ref</a>
 				</div>
 				<% else %>
 				<div id="btn-block">
@@ -34,6 +35,7 @@
 					<a class="btn-blue" href="http://localhost:3000/users/<%=session[:user_id]%>">Profile</a>
 					<a class="btn-blue" href="http://localhost:3000/sessions/destroy">Log out</a>
 					<a class="btn-blue" href="http://localhost:3000/pics/?layout=gallerythumbnail&user_id=<%= session[:user_id]%>">Gallery</a>
+					<a class="btn-blue" href="http://localhost:3000/coverage">Coverage</a>
 					<a class="btn-blue" href="http://localhost/Picbook/reference.html">Ref</a>
 				</div>
 				<% end%>
