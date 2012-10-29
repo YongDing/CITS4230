@@ -247,10 +247,10 @@ background-clip: padding-box;
 	
     position: absolute;
     text-align: center;
-    top:25%;
+    top:30%;
     right:10%;
     width: 390px;
-    height:40px;
+    height:35px;
 }
 .promobox h1{
     color: #FFFFFF;
@@ -268,20 +268,21 @@ background-clip: padding-box;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     display: block;
-    margin: 10px auto 0;
+    margin: 0px auto 0;
     position: relative;
     width:250px;
-    height:40px;
+    height:48px;
 }
 .promobox .cta-butt a {
     color: #FE63BB;
     font-family: "Myriad Pro",myriad,arial,sans-serif;
     font-size: 27px;
     font-weight: bold;
-  
+    
     padding: 15px 0 0;
     text-shadow: 0 1px 0 #FFFFFF;
 }
+
 .middle a {
 	font-weight:bold;
 }
