@@ -1,6 +1,6 @@
 class PicbookController < ApplicationController
   def index
-    @pics = Pic.limit(3).order("created_at DESC")
+    @pics = Pic("prop=?", "f").limit(3).order("created_at DESC")
   end
     
     def reference
