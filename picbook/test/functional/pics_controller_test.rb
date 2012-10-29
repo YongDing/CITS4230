@@ -4,11 +4,11 @@ class PicsControllerTest < ActionController::TestCase
   setup do
     @pic = pics(:one)
     @newpic = Pic.new
-    @request.session[:user_id] = "1"
+    @request.session[:user_id] = "9"
   end
 
   test "should get index" do
-      get :index, {:user_id => "1"}
+      get :index, {:user_id => "9"}
     assert_response :success
     assert_not_nil assigns(:pics)
   end
@@ -18,13 +18,7 @@ class PicsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create pic" do
-    assert_difference('Pic.count') do
-      post :create, :pic => {:prop => @pic.prop, :title => @pic.title }
-    end
 
-    assert_redirected_to pic_path(assigns(:pic))
-  end
 
   test "should show pic" do
     get :show, :id => @pic

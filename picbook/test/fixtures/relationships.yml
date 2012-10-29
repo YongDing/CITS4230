@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  person_id: 1
-  friend_id: 1
+  person_id: 9
+  friend_id: 9
 
 two:
-  person_id: 1
-  friend_id: 1
+  person_id: 9
+  friend_id: 9
