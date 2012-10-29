@@ -55,7 +55,20 @@ class PicsController < ApplicationController
 
     @pic.user_id = session[:user_id]
     @user = User.find(session[:user_id])
+    
+      
+
+    longitude = params[:longi]
+    latitude = params[:lati]
+    @pic.latitude = latitude
+    @pic.longitude = longitude
+
+      
     respond_to do |format|
+    
+
+
+        
       if @pic.save
           format.html { redirect_to @user, :notice => 'Pic was successfully created.' }
         format.json { render :json => @pic, :status => :created, :location => @pic }

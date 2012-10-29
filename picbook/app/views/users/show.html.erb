@@ -1,3 +1,12 @@
+<script type=text/javascript >
+function getPP() {
+	alert ("！！！！")
+	document.getElementById("longi").value = 700
+	document.getElementById("lati").value= 700
+}
+</script>
+
+
 <p id="notice">
 	<%= notice %>
 </p>
@@ -22,14 +31,14 @@
 				<br/>
 				<br/>
 				<br/>
-
+				<input type="button" onclick="getPP()" />
 
 			</div>
 		</div>
 	</div>
 	
 	<%= form_for @pic, :url => { :action =>"create", :controller => 
-"pics"}  do |f| %>
+"pics", :onclick => "getPP()"}  do |f| %>
 	<div class="right-side-profile">
 	
 	<% if @pic.errors.any? %>
@@ -43,8 +52,10 @@
       </ul>
     </div>
   <% end %>
-
-
+  <
+	  	<%= hidden_field_tag("longi", "", {:id => "longi"})%>
+		<%= hidden_field_tag("lati", "", {:id => "lati"})%>
+	
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your photo:</h3>
 		<div id="uploadBox">
 
