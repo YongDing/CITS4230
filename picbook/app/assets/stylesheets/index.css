@@ -5,7 +5,7 @@ padding:0;
 }
 #container{
 width:100%;
-height:auto;
+height:1200px;
 margin:0;
 padding:0;
 position:relative;
@@ -13,8 +13,11 @@ top:0px;
 left:0px;
 }
 
-#content{
-
+#contentindex{
+width:100%;
+height:1200px;
+margin:0;
+padding:0;
 }
 
 #header {
@@ -168,16 +171,16 @@ clear:both;
 		
 #hot_image_container{
 	width:60%;	
-	height:auto;
+	height:200px;
 	margin-top:110px;
 	margin-left:20%;
 }
 
 #latest_image_container{
 	width:60%;
-	height:auto;
+	height:400px;
 	margin-left:20%;
-	margin-top:20px;
+	margin-top:580px;
 	margin-bottom:20px;
 }
 .hot_image{

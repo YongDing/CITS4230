@@ -17,7 +17,7 @@
 		
 	</script>
 	
-<div id="content">
+<div id="#contentindex">
 				<div class="fluid_container">
 			        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
 			            <div data-thumb="<%= asset_path 'slides/thumbs/bg1.jpg' %>" data-src="<%=asset_path 'slides/bg1.jpg' %>">
@@ -51,20 +51,24 @@
 
 								<div id="latest_image_container">
 				<h3>Latest Photos</h3>
+				
+				<% @pics.each do |pic| %>
+				<% @friend = User.find(pic.user_id)%>
 				<div class="latest_image">
 			      <div class="left">
-			        <img src="img/claudia.jpeg" alt="claudia" />
+			        <%= image_tag (@friend.avatar.url) %>
 			      </div>
 			      <div class="middle">
-			        <p><a href="">claudiajordan</a></p>
-			        <p>Wow this dude is 51 years old!!</p>
+			        <p><a href=""><%= @friend.firstName+" "+@friend.lastName%></a></p>
+			        <p><%= pic.title%></p>
 			      </div>
 			      <div class="right">
 			        <a href="">
-			          <img src="img/sharedimage.jpg" alt="sharedimage"/>
+			          <%= image_tag pic.photo.url%>
 			        </a>
 			      </div>
 			    </div>
+			    <% end %>	
 								</div>
 	</div>
 
