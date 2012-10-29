@@ -42,9 +42,9 @@
 				<% @pics.each do |pic| %>
 				<% @friend = User.find(pic.user_id)%>
 				<div class="hot_image">
-				<a href=""><%= image_tag pic.photo.url, :class => "thumb" %>
+				<a href=<%= pic.photo.url%>><%= image_tag pic.photo.url, :class => "thumb" %>
 				</a>
-				<p class="hot_user"><%= image_tag (@friend.avatar.url) %><a href=""> @<%= @friend.firstName+" "+@friend.lastName%></a></p>
+				<p class="hot_user"><%= image_tag (@friend.avatar.url) %><a href="http://localhost:3000/pics/?layout=gallerythumbnail&user_id=<%= @friend.id%>"> @<%= @friend.firstName+" "+@friend.lastName%></a></p>
 				</div>
 <% end %>	
 				</div>	
@@ -60,11 +60,11 @@
 			        <%= image_tag (@friend.avatar.url) %>
 			      </div>
 			      <div class="middle">
-			        <p><a href=""><%= @friend.firstName+" "+@friend.lastName%></a></p>
+			        <p><a href="http://localhost:3000/pics/?layout=gallerythumbnail&user_id=<%= @friend.id%>"><%= @friend.firstName+" "+@friend.lastName%></a></p>
 			        <p><%= pic.title%></p>
 			      </div>
 			      <div class="right">
-			        <a href="">
+			        <a href=<%= pic.photo.url%>>
 			          <%= image_tag pic.photo.url%>
 			        </a>
 			      </div>
