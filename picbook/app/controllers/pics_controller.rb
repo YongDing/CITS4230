@@ -4,15 +4,22 @@ class PicsController < ApplicationController
   def index
     if session[:user_id] != nil
         @user = User.find(session[:user_id])
+        Relationship.find_each do |relationship|
+            if relationship.person_id = params[:user_id] && relationship.friend_id = session[:user_id]
+                @pics = Pic.where("user_id=?",params[:user_id])
+            else
+                @pics = Pic.where("user_id=? AND prop=?",params[:user_id],"f")
+            end
+        end
     else
         @user = User.new
         @user.firstName = "Guest"
-        
+        @pics = Pic.where("user_id=? AND prop=?",params[:user_id],"f")
     end
    
     session[:gallery_user_id] = params[:user_id]
     @galleryUser = User.find(params[:user_id])
-    @pics = Pic.where("user_id=?",params[:user_id])
+    
     session[:layout] = params["layout"]
           
     respond_to do |format|
