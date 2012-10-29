@@ -180,7 +180,7 @@ clear:both;
 	width:60%;
 	height:400px;
 	margin-left:20%;
-	margin-top:680px;
+	margin-top:510px;
 	margin-bottom:20px;
 }
 .hot_image{
@@ -263,7 +263,7 @@ background-clip: padding-box;
 }
 
 .promobox .cta-butt {
-	background: #D6D6D6;
+	background: #F5F5F3;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
