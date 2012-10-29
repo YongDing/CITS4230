@@ -9,7 +9,8 @@ class UsersController < ApplicationController
         @user = User.new
         @user.firstName = "Guest"
     end
-      
+    @relationships = Relationship.where("person_id = ?", session[:user_id])
+    @hasF = false
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @users }
@@ -115,8 +116,5 @@ class UsersController < ApplicationController
     end
     
     private
-    
-    def isFriend
-        
-    end
+
 end

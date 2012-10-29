@@ -1,3 +1,4 @@
+
 <p id="notice">
 	<%= notice %>
 </p>
@@ -20,60 +21,67 @@
 
 				<br/>
 				<br/>
-				
-				<%= if(!session[:user_id].nil?) 
-			           form_tag users_path, :method => 'get' do %>
-					  <p>
-					  	<%= hidden_field_tag(:id, value = @user.id) %>
-					    <%= text_field_tag :search, params[:search] %>
-					    <%= submit_tag "Search", :name=>nil%>
-					  </p>
-					<% end %>
-					<% end %>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
 
+				<%= if(!session[:user_id].nil?)
+				form_tag users_path, :method => 'get' do %>
+				<p>
+					<%= hidden_field_tag(:id, value = @user.id) %>
+					<%= text_field_tag :search, params[:search] %>
+					<%= submit_tag "Search", :name=>nil%>
+				</p>
+				<% end %>
+				<% end %>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
 
 			</div>
 		</div>
 	</div>
-	
 
 	<div class="right-side-profile">
-		
+
 		<h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Gender</th>
-    <th>Birthday</th>
-    <th>Profile</th>
-    <th></th>
-  </tr>
+		<table>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Gender</th>
+				<th>Birthday</th>
+				<th>Profile</th>
+				<th></th>
+			</tr>
 
-<% @users.each do |user| %>
-<% if user.id != session[:user_id] %>
-  <tr>
-    <td><%= user.firstName %></td>
-    <td><%= user.lastName %></td>
-    <td><%= user.gender %></td>
-    <td><%= user.birthday %></td>
-    <td><%= image_tag user.avatar, :width => "100px", :height => "100px"  %>
-   </td>
-    
-    <td><%= link_to 'Gallery', :controller => "pics", :action => "index", :layout => "gallerysmall", :user_id => user.attributes_before_type_cast["id"] %></td>
-    <td><%= link_to 'Make Friend', {:controller => "users", :action => "mkfd", :id=> user.id} %></td>
-  </tr>
-<% end %>
-<% end %>
-</table>
+			<% @users.each do |user| %>
+			<% if user.id != session[:user_id] %>
+			<tr>
+				<td><%= user.firstName %></td>
+				<td><%= user.lastName %></td>
+				<td><%= user.gender %></td>
+				<td><%= user.birthday %></td>
+				<td><%= image_tag user.avatar, :width => "100px", :height => "100px"  %> </td>
 
-<br />
+				<td><%= link_to 'Gallery', :controller => "pics", :action => "index", :layout => "gallerysmall", :user_id => user.attributes_before_type_cast["id"] %></td>
+				<%= @relationships.each do |r| %>
+				<% if r.friend_id == user.id %>
+				<td> <%= image_tag "img/friend.jpg",:size=> '25x25' %></td>
+				<% @hasF = true %>
 
-		
+				<% end %>
+				<% end %>
+
+				<% if @hasF != true %>
+				<td><%= link_to 'Make Friend', {:controller => "users", :action => "mkfd", :id=> user.id} %></td>
+				<% end %>
+				<% @hasF = false%>
+			</tr>
+			<% end %>
+			<% end %>
+		</table>
+
+		<br />
+
 	</div>
 </div>
