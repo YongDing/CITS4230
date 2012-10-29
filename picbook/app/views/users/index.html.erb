@@ -1,8 +1,4 @@
 
-<p id="notice">
-	<%= notice %>
-</p>
-
 <div id="user-strip"></div>
 <div id="content">
 	<div class="left-side">
@@ -22,15 +18,7 @@
 				<br/>
 				<br/>
 
-				<%= if(!session[:user_id].nil?)
-				form_tag users_path, :method => 'get' do %>
-				<p>
-					<%= hidden_field_tag(:id, value = @user.id) %>
-					<%= text_field_tag :search, params[:search] %>
-					<%= submit_tag "Search", :name=>nil%>
-				</p>
-				<% end %>
-				<% end %>
+			
 				<br/>
 				<br/>
 				<br/>
@@ -42,7 +30,7 @@
 
 	<div class="right-side-profile">
 
-		<h1>Listing users</h1>
+	 <br />
 
 		<table>
 			<tr>
@@ -64,7 +52,7 @@
 				<td><%= image_tag user.avatar, :width => "100px", :height => "100px"  %> </td>
 
 				<td><%= link_to 'Gallery', :controller => "pics", :action => "index", :layout => "gallerysmall", :user_id => user.attributes_before_type_cast["id"] %></td>
-				<%= @relationships.each do |r| %>
+				<% @relationships.each do |r| %>
 				<% if r.friend_id == user.id %>
 				<td> <%= image_tag "img/friend.jpg",:size=> '25x25' %></td>
 				<% @hasF = true %>
